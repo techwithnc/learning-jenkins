@@ -4,6 +4,7 @@ pipeline{
         stage("build"){
             steps{
                 echo " This stage is Building...."
+                sh 'cat file.txt'
             }
         }
         stage("test"){
