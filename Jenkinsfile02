@@ -7,6 +7,7 @@ pipeline{
                 sh "docker build -t techwithnc/image:4.0 ."
                 sh "docker image ls"
             }
+        }
         stage("Push Docker Image"){
             steps{
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
