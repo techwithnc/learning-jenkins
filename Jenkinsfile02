@@ -1,11 +1,18 @@
 pipeline{
     agent any
     stages{
-        stage("Stage01"){
+        stage("Build Docker Image"){
             steps{
                 sh "ls -l"
                 sh "docker build -t techwithnc/image:4.0 ."
                 sh "docker image ls"
+            }
+        stage("Push Docker Image"){
+            steps{
+                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                    sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
+                    sh "docker image push techwithnc/image:4.0"
+                }
             }
         }
     }
