@@ -4,7 +4,7 @@ pipeline{
         stage("test"){
             steps{
                 echo "This stage is Testing ... "
-                echo "Current branch is {env.BRANCH_NAME}"
+                echo "Current build no. is ${env.BUILD_NUMBER}"
             }
         }
         stage("build"){
