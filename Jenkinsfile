@@ -4,7 +4,7 @@ pipeline{
         stage("test"){
             steps{
                 echo "This stage is Testing ... "
-                echo "Current branch is ${env.BRANCH_NAME}"
+                echo "Current branch is $env.BRANCH_NAME"
             }
         }
         stage("build"){
@@ -21,7 +21,7 @@ pipeline{
         stage("deploy"){
             when {
                 expression {
-                    BRANCH_NAME == 'main'
+                    env.BRANCH_NAME == 'main'
                 }
             }
             steps{
