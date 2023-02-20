@@ -20,7 +20,6 @@ pipeline{
             steps{
                 script{
                     mygvscript.loginApp()
-                    }
                 }
             }
         }
