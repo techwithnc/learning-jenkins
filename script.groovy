@@ -1,6 +1,6 @@
 def buildApp(){
     sh 'ls -l'
-    sh 'docker build -t techwithnc/image:4.0 .'
+    sh 'docker build -t techwithnc/image:5.0 .'
     sh 'docker image ls'
 }
 def loginApp(){
