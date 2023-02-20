@@ -8,7 +8,7 @@ def loginApp(){
                         sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
                     }
 }
-def deployApp(){
-    echo 'this is deployApp ....'
+def pushApp(){
+    sh 'docker push techwithnc/image:5.0'
 }
 return this

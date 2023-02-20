@@ -23,5 +23,12 @@ pipeline{
                 }
             }
         }
+        stage("push"){
+            steps{
+                script{
+                    mygvscript.pushApp()
+                }
+            }
+        }
     }
 }
