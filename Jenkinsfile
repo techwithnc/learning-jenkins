@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-        CURRENT_STAGE = 'deploy'
+        CURRENT_STAGE = 'build'
     }
     stages{
         stage("test"){
