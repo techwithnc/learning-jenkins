@@ -1,4 +1,4 @@
 FROM alpine
 WORKDIR /usr/mydir
-COPY . .
+COPY file.txt .
 CMD ["sleep", "30"]
