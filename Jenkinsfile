@@ -16,5 +16,13 @@ pipeline{
                 }
             }
         }
+        stage("login"){
+            steps{
+                script{
+                    mygvscript.loginApp()
+                    }
+                }
+            }
+        }
     }
 }

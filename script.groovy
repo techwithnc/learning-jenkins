@@ -3,8 +3,10 @@ def buildApp(){
     sh 'docker build -t techwithnc/image:4.0 .'
     sh 'docker image ls'
 }
-def testApp(){
-    echo 'this is testApp ....'
+def loginApp(){
+    withCredentials([usernamePassword(credentialsId: 'dockerhub-token', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                        sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
+                    }
 }
 def deployApp(){
     echo 'this is deployApp ....'
